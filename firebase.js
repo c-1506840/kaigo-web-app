@@ -6,7 +6,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.0/firebase
 import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBG30wR77-eriJRen4fZpZSc9Ku98Jpuns",
+  apiKey: "AIzaSyBG30wR77-eriJRenf4ZpZSc9Ku98Jpuns",
   authDomain: "kaigo-web-app.firebaseapp.com",
   projectId: "kaigo-web-app",
   storageBucket: "kaigo-web-app.firebasestorage.app",
