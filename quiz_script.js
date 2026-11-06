@@ -275,6 +275,7 @@ el("confirmPauseButton").addEventListener("click", () => {
 
 // 保存データを読み込んで、前回の続きから画面を開く
 loadProgress();
+screen = "home";
 render();
 saveProgress();
 writeHistory(true);
