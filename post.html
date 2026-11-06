@@ -11,7 +11,6 @@
 
   <header class="site-header">
     <a class="site-logo" href="index.html">介護の仕事紹介</a>
-
     <nav class="site-nav">
       <a href="index.html">施設・企業一覧</a>
       <a href="facility.html">施設紹介</a>
@@ -24,27 +23,58 @@
       <p>施設・企業の紹介情報を入力してください。</p>
     </section>
 
+    <!-- ログイン・新規登録画面 -->
+    <section id="auth-section" class="facility-list-section" hidden>
+      <h2 id="auth-title">ログイン</h2>
+      <p id="auth-description">
+        投稿するにはログインしてください。
+      </p>
+
+      <div id="signup-fields" hidden>
+        <p>
+          <label for="signup-facility-name">施設・企業名</label><br>
+          <input type="text" id="signup-facility-name">
+        </p>
+      </div>
+
+      <p>
+        <label for="auth-email">メールアドレス</label><br>
+        <input type="email" id="auth-email" required>
+      </p>
+
+      <p>
+        <label for="auth-password">パスワード</label><br>
+        <input type="password" id="auth-password" required>
+      </p>
+
+      <button type="button" id="auth-submit">ログイン</button>
+      <button type="button" id="toggle-auth">新規登録はこちら</button>
+
+      <p id="auth-message" role="status"></p>
+    </section>
+
+    <!-- 投稿フォーム -->
     <section class="facility-list-section">
       <form id="facility-form">
 
         <p>
           <label for="facility-name">施設・企業名</label><br>
-          <input type="text" id="facility-name" name="facility-name" required>
+          <input type="text" id="facility-name" required>
         </p>
 
         <p>
           <label for="facility-description">施設・企業の紹介</label><br>
-          <textarea id="facility-description" name="facility-description" rows="5" required></textarea>
+          <textarea id="facility-description" rows="5" required></textarea>
         </p>
 
         <h2>職員の1日の流れ</h2>
         <p>時間と仕事内容を入力してください。</p>
 
         <div id="daily-flow-inputs">
-          <div class="flow-input">
+          <div class="flow-item">
             <p>
               <label>時間</label><br>
-              <input type="text" name="flow-time[]" placeholder="例：勤務開始時刻">
+              <input type="text" name="flow-time[]" placeholder="例：9:00">
             </p>
             <p>
               <label>仕事内容</label><br>
@@ -53,20 +83,22 @@
           </div>
         </div>
 
-        <button type="button" id="add-flow-button">時間・仕事内容の欄を追加</button>
+        <button type="button" id="add-flow-button">
+          時間・仕事内容の欄を追加
+        </button>
 
         <h2>介護現場の写真・動画</h2>
         <p>
           <label for="facility-media">写真・動画を選択</label><br>
-          <input type="file" id="facility-media" name="facility-media" accept="image/*,video/*" multiple>
+          <input type="file" id="facility-media"
+                 accept="image/*,video/*" multiple>
         </p>
 
         <p>
-          <button type="submit">投稿内容を確認</button>
+          <button type="submit">投稿する</button>
         </p>
 
         <p id="form-message" role="status"></p>
-
       </form>
     </section>
   </main>
@@ -78,4 +110,3 @@
   <script type="module" src="post.js"></script>
 </body>
 </html>
-```

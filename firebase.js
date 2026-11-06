@@ -3,6 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebas
 
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
 
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBG30wR77-eriJRen4fZpZSc9Ku98Jpuns",
   authDomain: "kaigo-web-app.firebaseapp.com",
@@ -16,5 +18,8 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-// dbを他のJavaScriptファイルで使えるようにする
-export { db };
+// ログイン認証
+const auth = getAuth(app);
+
+// 他のJavaScriptファイルで使用できるようにする
+export { db, auth };
