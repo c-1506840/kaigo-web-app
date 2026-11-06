@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施設情報の投稿</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-logo" href="index.html">介護の仕事紹介</a>
+
+    <nav class="site-nav">
+      <a href="index.html">施設・企業一覧</a>
+      <a href="facility.html">施設紹介</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>施設情報の投稿</h1>
+      <p>施設・企業の紹介情報を入力してください。</p>
+    </section>
+
+    <section class="facility-list-section">
+      <form id="facility-form">
+
+        <p>
+          <label for="facility-name">施設・企業名</label><br>
+          <input type="text" id="facility-name" name="facility-name" required>
+        </p>
+
+        <p>
+          <label for="facility-description">施設・企業の紹介</label><br>
+          <textarea id="facility-description" name="facility-description" rows="5" required></textarea>
+        </p>
+
+        <h2>職員の1日の流れ</h2>
+        <p>時間と仕事内容を入力してください。</p>
+
+        <div id="daily-flow-inputs">
+          <div class="flow-input">
+            <p>
+              <label>時間</label><br>
+              <input type="text" name="flow-time[]" placeholder="例：勤務開始時刻">
+            </p>
+            <p>
+              <label>仕事内容</label><br>
+              <input type="text" name="flow-task[]" placeholder="仕事内容">
+            </p>
+          </div>
+        </div>
+
+        <button type="button" id="add-flow-button">時間・仕事内容の欄を追加</button>
+
+        <h2>介護現場の写真・動画</h2>
+        <p>
+          <label for="facility-media">写真・動画を選択</label><br>
+          <input type="file" id="facility-media" name="facility-media" accept="image/*,video/*" multiple>
+        </p>
+
+        <p>
+          <button type="submit">投稿内容を確認</button>
+        </p>
+
+        <p id="form-message" role="status"></p>
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>介護の仕事紹介</p>
+  </footer>
+
+  <script type="module" src="post.js"></script>
+</body>
+</html>
+```

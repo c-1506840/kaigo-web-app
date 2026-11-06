@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="4択クイズで介護職の仕事内容や魅力を知ることができる学習ページです。">
+  <title>介護職クイズ | 介護職について知ろう</title>
+  <link rel="stylesheet" href="quiz_style.css">
+  <script src="quiz_script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>介護職について知ろう</span>
+      </div>
+      <span class="header-label">介護職クイズ</span>
+    </div>
+  </header>
+
+  <main class="main-area">
+    <!-- 開始画面 -->
+    <section id="homeScreen" class="panel hero-panel" aria-labelledby="heroTitle">
+      <div class="hero-content">
+        <p class="eyebrow">LEARN ABOUT CARE WORK</p>
+        <h1 id="heroTitle">クイズで知ろう、<br><span>介護のしごと。</span></h1>
+        <p class="hero-description">介護の仕事って、どんなことをするの？<br>4択クイズに挑戦して、仕事の内容や大切にしていることを楽しく学んでみましょう。</p>
+        <div class="quick-facts" aria-label="クイズの概要">
+          <span> <strong>5問</strong> のクイズ</span>
+          <span> <strong>4択</strong> で回答</span>
+          <span> <strong>解説</strong> つき</span>
+        </div>
+        <div class="home-actions">
+          <button id="startButton" class="btn btn-primary" type="button">クイズをスタート <span aria-hidden="true">→</span></button>
+          <button id="resumeButton" class="btn btn-outline" type="button" hidden>続きから再開</button>
+        </div>
+        <p id="homeStatus" class="home-status" aria-live="polite"></p>
+      </div>
+      <div class="hero-aside">
+        <div class="circle-symbol" aria-hidden="true">?</div>
+        <p class="aside-top">このクイズで学べること</p>
+        <ol class="learning-list">
+          <li>介護職員の仕事内容</li>
+          <li>資格や働き方について</li>
+          <li>利用者を支える考え方</li>
+        </ol>
+        <p class="aside-note">知っているようで知らないことを、少しずつ。</p>
+      </div>
+    </section>
+
+    <!-- クイズ画面 -->
+    <section id="quizScreen" class="panel quiz-panel" aria-labelledby="question" hidden>
+      <div class="quiz-topline">
+        <span class="pill">介護職クイズ</span>
+        <button id="pauseButton" class="text-button" type="button">中断してトップへ <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="progress-heading">
+        <span id="number">第1問 / 全5問</span>
+        <span id="progressPercent">20%</span>
+      </div>
+      <div id="progressTrack" class="progress-track" role="progressbar" aria-label="クイズの進み具合" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <p class="question-caption">次の問題に答えてみましょう</p>
+      <h1 id="question" class="question-title"></h1>
+      <div id="choices" class="choices" role="group" aria-label="4つの選択肢"></div>
+      <div id="feedback" class="feedback" aria-live="polite" hidden>
+        <p id="feedbackTitle" class="feedback-title"></p>
+        <p id="feedbackAnswer" class="feedback-answer"></p>
+        <p id="feedbackExplanation" class="feedback-explanation"></p>
+      </div>
+      <div class="quiz-navigation">
+        <button id="prevButton" class="btn btn-subtle" type="button">← 前の問題へ</button>
+        <button id="nextButton" class="btn btn-primary" type="button" hidden>次の問題へ →</button>
+      </div>
+    </section>
+
+    <!-- 結果画面 -->
+    <section id="resultScreen" class="panel result-panel" aria-labelledby="resultTitle" hidden>
+      <p class="eyebrow">RESULT</p>
+      <h1 id="resultTitle">おつかれさまでした！</h1>
+      <p class="result-subtitle">介護職クイズの結果はこちらです。</p>
+      <div id="scoreRing" class="score-ring" aria-label="正答率">
+        <span id="scoreText" class="score-number">0 / 5</span>
+        <span class="score-label">問 正解</span>
+      </div>
+      <p id="resultMessage" class="result-message"></p>
+      <p class="result-note">クイズで気になったことは、「介護職員の一日紹介」でも調べてみてください。</p>
+      <div class="result-actions">
+        <button id="reviewButton" class="btn btn-outline" type="button">回答を見直す</button>
+        <button id="restartButton" class="btn btn-primary" type="button">もう一度挑戦する →</button>
+      </div>
+      <button id="resultHomeButton" class="text-button" type="button">クイズのトップに戻る</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">介護職について知ろう · クイズで学ぶ介護の仕事</footer>
+
+  <!-- 中断時の確認画面 -->
+  <dialog id="pauseDialog" class="pause-dialog" aria-labelledby="pauseTitle">
+    <h2 id="pauseTitle">クイズを中断しますか？</h2>
+    <p>ここまでの回答は保存されます。トップ画面から「続きから再開」を選べば、同じ問題から再開できます。</p>
+    <div class="dialog-actions">
+      <button id="cancelPauseButton" class="btn btn-outline" type="button">クイズに戻る</button>
+      <button id="confirmPauseButton" class="btn btn-primary" type="button">保存して中断する</button>
+    </div>
+  </dialog>
+</body>
+</html>

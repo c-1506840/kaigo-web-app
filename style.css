@@ -1,0 +1,158 @@
+
+/* ページ全体 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #303b33;
+  background: #ffffff;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+}
+
+/* ヘッダー */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5eae4;
+}
+
+.site-logo {
+  color: #2f6849;
+  font-size: 21px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.site-nav a {
+  color: #405347;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #2f6849;
+  text-decoration: underline;
+}
+
+/* ページの紹介部分 */
+.page-intro {
+  padding: 75px 6%;
+  text-align: center;
+  background: #edf4eb;
+}
+
+.page-intro h1 {
+  margin: 0 0 16px;
+  color: #285c40;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.page-intro p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #536457;
+}
+
+/* 施設一覧 */
+.facility-list-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 6%;
+}
+
+.facility-list-section h2,
+.about-section h2 {
+  margin-top: 0;
+  color: #285c40;
+  font-size: 27px;
+}
+
+.facility-list-section > p {
+  color: #667168;
+}
+
+.facility-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+/* 投稿がまだないときの案内 */
+.empty-message {
+  margin-top: 24px;
+  padding: 30px 20px;
+  border: 1px dashed #b9cbb9;
+  border-radius: 12px;
+  background: #f8faf7;
+  color: #617063;
+  text-align: center;
+}
+
+/* サイトについて */
+.about-section {
+  padding: 40px 6% 50px;
+  background: #f7f8f5;
+}
+
+.about-section h2,
+.about-section p {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.about-section p {
+  color: #59665c;
+}
+
+/* フッター */
+.site-footer {
+  padding: 24px;
+  background: #285c40;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 700px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .site-nav {
+    gap: 12px 18px;
+  }
+
+  .page-intro {
+    padding: 50px 6%;
+  }
+
+  .facility-list {
+    grid-template-columns: 1fr;
+  }
+}

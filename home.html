@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="介護職の仕事内容や魅力を紹介するサイトです。">
+  <title>介護の仕事を知ろう</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: #24443b;
+      background: #f0f7f2;
+      line-height: 1.8;
+    }
+
+    header {
+      background: white;
+      padding: 18px 6%;
+      border-bottom: 1px solid #dce9df;
+    }
+
+    header h2 {
+      margin: 0;
+      color: #286044;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .intro h1 {
+      color: #285c40;
+      font-size: 38px;
+    }
+
+    .intro p {
+      color: #617268;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .card h2 {
+      color: #285c40;
+      font-size: 24px;
+    }
+
+    .card p {
+      color: #617268;
+      min-height: 75px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #2f704b;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background: #205a39;
+    }
+
+    .about {
+      margin-top: 40px;
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 22px;
+      background: #285c40;
+      color: white;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .intro h1 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>介護の仕事を知ろう</h2>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <h1>介護の仕事を、もっと知ってみよう。</h1>
+
+      <p>
+        介護職の仕事内容や魅力を、
+        クイズや施設・企業の紹介を通して知ることができます。
+      </p>
+    </section>
+
+    <section class="cards">
+
+      <!-- 介護職クイズ -->
+      <div class="card">
+        <h2>介護職クイズ</h2>
+
+        <p>
+          介護職員の仕事内容や資格、働き方について
+          4択クイズに挑戦してみましょう。
+        </p>
+
+        <a href="quiz_index.html">
+          クイズに挑戦する →
+        </a>
+      </div>
+
+      <!-- 施設・企業紹介 -->
+      <div class="card">
+        <h2>施設・企業紹介</h2>
+
+        <p>
+          介護施設や企業の情報、
+          職員の1日の流れなどを紹介します。
+        </p>
+
+        <a href="index.html">
+          施設・企業を見る →
+        </a>
+      </div>
+
+    </section>
+
+    <section class="about">
+      <h2>このサイトについて</h2>
+
+      <p>
+        このサイトは、介護の仕事に興味を持ってもらうことを
+        目的として制作しています。
+        クイズや施設・企業の情報を通して、
+        介護の仕事について理解を深めてみましょう。
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    介護の仕事を知ろう
+  </footer>
+
+</body>
+</html>
