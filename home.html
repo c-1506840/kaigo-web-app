@@ -15,40 +15,103 @@
     body {
       margin: 0;
       font-family: "Yu Gothic", "Meiryo", sans-serif;
-      color: #24443b;
-      background: #f0f7f2;
+      color: #34483e;
+      background: #f5f8f5;
       line-height: 1.8;
     }
 
     header {
       background: white;
-      padding: 18px 6%;
-      border-bottom: 1px solid #dce9df;
+      padding: 15px 6%;
+      border-bottom: 1px solid #e1eae3;
     }
 
-    header h2 {
-      margin: 0;
-      color: #286044;
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      color: #3d805f;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #527362;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #4b9675;
     }
 
     main {
-      max-width: 1000px;
-      margin: 60px auto;
+      max-width: 1100px;
+      margin: 45px auto;
       padding: 0 20px;
     }
 
-    .intro {
-      text-align: center;
+    .hero {
+      background: white;
+      border-radius: 20px;
+      padding: 55px 45px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 35px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
       margin-bottom: 45px;
     }
 
-    .intro h1 {
-      color: #285c40;
-      font-size: 38px;
+    .hero-label {
+      color: #4b9675;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
 
-    .intro p {
-      color: #617268;
+    .hero h1 {
+      color: #356c50;
+      font-size: 36px;
+      line-height: 1.5;
+      margin: 10px 0 20px;
+    }
+
+    .hero p {
+      color: #65766c;
+    }
+
+    .hero-visual {
+      background: #eaf4ed;
+      border-radius: 50% 40% 45% 35%;
+      padding: 35px;
+      text-align: center;
+      color: #4b9675;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      color: #356c50;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .section-title p {
+      color: #829087;
     }
 
     .cards {
@@ -59,60 +122,97 @@
 
     .card {
       background: white;
+      border-radius: 16px;
       padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
       text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .card h2 {
-      color: #285c40;
-      font-size: 24px;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.09);
+    }
+
+    .card-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #3d805f;
+      font-size: 23px;
     }
 
     .card p {
-      color: #617268;
-      min-height: 75px;
+      color: #718078;
+      min-height: 55px;
     }
 
     .card a {
       display: inline-block;
       margin-top: 15px;
-      padding: 12px 25px;
-      background: #2f704b;
+      padding: 11px 28px;
+      background: #4b9675;
       color: white;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 30px;
       font-weight: bold;
+      transition: background 0.3s;
     }
 
     .card a:hover {
-      background: #205a39;
+      background: #367653;
     }
 
     .about {
-      margin-top: 40px;
-      padding: 25px;
-      background: white;
-      border-radius: 15px;
+      margin-top: 45px;
+      padding: 30px;
+      background: #eaf3ec;
+      border-radius: 16px;
       text-align: center;
+    }
+
+    .about h2 {
+      color: #356c50;
+    }
+
+    .about p {
+      color: #65766c;
     }
 
     footer {
       margin-top: 60px;
-      padding: 22px;
-      background: #285c40;
+      padding: 25px;
+      background: #3d805f;
       color: white;
       text-align: center;
     }
 
     @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 35px 25px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
       .cards {
         grid-template-columns: 1fr;
       }
 
-      .intro h1 {
-        font-size: 29px;
+      nav a {
+        margin-left: 8px;
+        font-size: 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
       }
     }
   </style>
@@ -121,58 +221,83 @@
 <body>
 
   <header>
-    <h2>介護の仕事を知ろう</h2>
+    <div class="header-inner">
+      <a href="home.html" class="logo">介護の仕事を知ろう</a>
+
+      <nav>
+        <a href="home.html">ホーム</a>
+        <a href="quiz_index.html">介護職クイズ</a>
+        <a href="index.html">施設紹介</a>
+      </nav>
+    </div>
   </header>
 
   <main>
 
-    <section class="intro">
-      <h1>介護の仕事を、もっと知ってみよう。</h1>
+    <section class="hero">
+      <div>
+        <div class="hero-label">WELCOME</div>
 
-      <p>
-        介護職の仕事内容や魅力を、
-        クイズや施設・企業の紹介を通して知ることができます。
-      </p>
+        <h1>介護の仕事を、<br>もっと知ってみよう。</h1>
+
+        <p>
+          介護職には、どのような仕事があるのでしょうか。
+          クイズや施設・企業の紹介を通して、
+          介護の仕事の内容や魅力について知ってみましょう。
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        介護の仕事を<br>
+        知るきっかけに
+      </div>
     </section>
 
-    <section class="cards">
-
-      <!-- 介護職クイズ -->
-      <div class="card">
-        <h2>介護職クイズ</h2>
-
-        <p>
-          介護職員の仕事内容や資格、働き方について
-          4択クイズに挑戦してみましょう。
-        </p>
-
-        <a href="quiz_index.html">
-          クイズに挑戦する →
-        </a>
+    <section>
+      <div class="section-title">
+        <h2>CONTENTS</h2>
+        <p>気になるコンテンツを選んでみましょう。</p>
       </div>
 
-      <!-- 施設・企業紹介 -->
-      <div class="card">
-        <h2>施設・企業紹介</h2>
+      <div class="cards">
 
-        <p>
-          介護施設や企業の情報、
-          職員の1日の流れなどを紹介します。
-        </p>
+        <div class="card">
+          <div class="card-icon">📝</div>
+          <h3>介護職クイズ</h3>
 
-        <a href="index.html">
-          施設・企業を見る →
-        </a>
+          <p>
+            介護職員の仕事内容や資格、働き方について
+            4択クイズに挑戦してみましょう。
+          </p>
+
+          <a href="quiz_index.html">
+            クイズに挑戦する →
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏠</div>
+          <h3>施設・企業紹介</h3>
+
+          <p>
+            介護施設や企業の情報、
+            職員の1日の仕事の流れなどを紹介します。
+          </p>
+
+          <a href="index.html">
+            施設・企業を見る →
+          </a>
+        </div>
+
       </div>
-
     </section>
 
     <section class="about">
       <h2>このサイトについて</h2>
 
       <p>
-        このサイトは、介護の仕事に興味を持ってもらうことを
-        目的として制作しています。
+        このサイトは、より多くの人に介護の仕事に
+        興味を持ってもらうことを目的として制作しています。
         クイズや施設・企業の情報を通して、
         介護の仕事について理解を深めてみましょう。
       </p>
