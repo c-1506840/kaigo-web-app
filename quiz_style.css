@@ -136,3 +136,18 @@ button:focus-visible { outline: 3px solid #2b9b90; outline-offset: 3px; }
   .quiz-navigation .btn { padding: 11px 12px; font-size: 12px; }
   .dialog-actions .btn { width: 100%; }
 }
+.back-home {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  color: #285c40;
+  background: white;
+  border: 1px solid #285c40;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-home:hover {
+  background: #e8f2eb;
+}
